@@ -47,9 +47,26 @@ chmod +x key_gen.sh
 ```bash
 Step8:  Now execute the shell script
 ./key_gen.sh
-```
-
 Now again repeat Step6 and password mighjt not be asked
+```
+```bash
+Step9: Now, create a directory for example ansible-proj and get inside the directory
+mkdir ansible-proj 
+cd ansible-proj
+```
+```bash
+Step10: Create an inventory file where we will work
+vim Inventory
+```
+```bash
+Step11: Inside the inventory file add:
+web1 ansible_host=192.168.56.15 ansible_user=vagrant
+```
+```bash
+---NOTE: since ssh keygen is used so we do not need to add ansible_password---
+else we have to write the following inside inventory file
+web1 ansible_host=192.168.56.15 ansible_user=vagrant ansible_password=vagrant(or any other password that you have kept manually)
+```
 
 ---------NOTE: YOU CAN SKIP THE SSH KEYGEN PROCESS, BUT YOU HAVE TO ENETER PASSWORD ANYTIME YOU WANT TO ACESS WEB1----------
 
