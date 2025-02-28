@@ -67,9 +67,12 @@ else we have to write the following inside inventory file
 ```bash
 web1 ansible_host=192.168.56.15 ansible_user=vagrant ansible_password=vagrant(or any other password that you have kept manually)
 ```
-
 ---------NOTE: YOU CAN SKIP THE SSH KEYGEN PROCESS, BUT YOU HAVE TO ENETER PASSWORD ANYTIME YOU WANT TO ACESS WEB1----------
-
+```bash
+Step12: Now to using the inventory to install apache2 on another machine
+ansible -i inventory -m apt -a "name=apache2 state=present" web1 --become
+```
+"-- become" acts like sudo giving the user permission to act as root
 ## Debugging Issues
 If password authentication is not working:
 ```bash
