@@ -50,8 +50,8 @@ Step8:  Now execute the shell script
 ```
 
 Now again repeat Step6 and password mighjt not be asked
+
 ---------NOTE: YOU CAN SKIP THE SSH KEYGEN PROCESS, BUT YOU HAVE TO ENETER PASSWORD ANYTIME YOU WANT TO ACESS WEB1----------
-```
 
 ## Debugging Issues
 If password authentication is not working:
