@@ -13,36 +13,44 @@ echo "This is a pratice of ansible"
 
 ##Installation
 ```bash
-echo "Step1: Clone this repository"
+Step1: Clone this repository
 git clone https://github.com/PradishTamrkar/ansible-practice.git
-
-echo "Step2: Go to he cloned directory"
+```
+```bash
+Step2: Go to he cloned directory
 cd ../ansible
-
-echo "Step3: Start your vagrant machine"
+```
+```bash
+Step3: Start your vagrant machine
 Vagrant up
-
-echo "Step4: Get inside the ansible-host machine"
+```
+```bash
+Step4: Get inside the ansible-host machine
 vagrant ssh ansible-host
-
-echo "step5: check if this machine is connected to web1"
+```
+```bash
+Step5: check if this machine is connected to web1
 ping web1.demo.com
-echo "If this command doesnot give any results check back if any configurations have failed"
-
-echo "step6: try to enter web1 machine form ansible-host"
+If this command doesnot give any results check back if any configurations have failed
+```
+```bash
+Step6: try to enter web1 machine form ansible-host
 ssh vagrant@web1
+```
+Password will be asked for eneter web1.0 machine, this is becasue we have not copied the ssh-keygen values of ansible-host to the web1
 
-echo "Password will be asked for eneter web1.0 machine, this is becasue we have not copied the ssh-keygen values of ansible-host to the web1"
-
-echo "For Passwordless Authentication"
-echo "Step7: change the copied key_gen.sh mode to executable mode"
+For Passwordless Authentication
+```bash
+Step7: change the copied key_gen.sh mode to executable mode
 chmod +x key_gen.sh
-
-echo "Step8:  Now execute the shell script"
+```
+```bash
+Step8:  Now execute the shell script
 ./key_gen.sh
+```
 
-echo "Now again repeat Step6 and password mighjt not be asked"
-echo "---------NOTE: YOU CAN SKIP THE SSH KEYGEN PROCESS, BUT YOU HAVE TO ENETER PASSWORD ANYTIME YOU WANT TO ACESS WEB1----------"
+Now again repeat Step6 and password mighjt not be asked
+---------NOTE: YOU CAN SKIP THE SSH KEYGEN PROCESS, BUT YOU HAVE TO ENETER PASSWORD ANYTIME YOU WANT TO ACESS WEB1----------
 ```
 
 ## Debugging Issues
