@@ -1,6 +1,6 @@
 # Ansible Practice
-echo "*************************************************************************"
-echo "This is a pratice of ansible"
+******************************************************************************************************************************
+This is a pratice of ansible
 
 ## Features
 -multiple virtual machines defined in one vagrantfile, "ansible-host" as ansible machine and "web1" as Remote machine
