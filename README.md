@@ -62,9 +62,9 @@ vim Inventory
 Step11: Inside the inventory file add:
 web1 ansible_host=192.168.56.15 ansible_user=vagrant
 ```
-```bash
 ---NOTE: since ssh keygen is used so we do not need to add ansible_password---
 else we have to write the following inside inventory file
+```bash
 web1 ansible_host=192.168.56.15 ansible_user=vagrant ansible_password=vagrant(or any other password that you have kept manually)
 ```
 
