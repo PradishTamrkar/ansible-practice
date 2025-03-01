@@ -70,10 +70,36 @@ web1 ansible_host=192.168.56.15 ansible_user=vagrant ansible_password=vagrant(or
 ---------NOTE: YOU CAN SKIP THE SSH KEYGEN PROCESS, BUT YOU HAVE TO ENETER PASSWORD ANYTIME YOU WANT TO ACESS WEB1----------
 ```bash
 Step12: Now to using the inventory to install apache2 on another machine
-ansible -i inventory -m apt -a "name=apache2 state=present" web1 --become
+`ansible -i inventory -m apt -a "name=apache2 state=present" web1 --become`
 ```
-"-- become" acts like sudo giving the user permission to act as root
-## Debugging Issues
+`-- become` acts like sudo giving the user permission to act as root
+## Deploying a web file
+```bash
+Step1:clone the git repo on your working directory inside ansible-host (This is for practice only)
+`git clone https://github.com/srtimsina/devops-techaxis.git`
+```
+```bash
+Step2: a devops-techaxis file must have been created there, inside this directory create a new `images` directory and move the image to that directory
+`cd devops-techaxis
+mkdir images
+mv deops.jpg images/
+`
+```
+```bash
+Step3:now make following changs in the `index.html` file
+`
+you might see
+`<img src="devops.jpg" alt="DevOps Image">`
+`
+change the source into
+`<img src="images/devops.jpg" alt="DevOps Image">`
+```
+```bash
+now move back into the ansible directory and then run the following command
+`ansible -i inventory -m "copy" -a "src=devops-techaxis/ dest=/var/www/html/" web1 --become
+`
+```
+##Debugging Issues
 If password authentication is not working:
 ```bash
 sudo grep -r PasswordAuthentication /etc/ssh/
